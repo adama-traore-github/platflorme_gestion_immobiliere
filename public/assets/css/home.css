@@ -1,0 +1,48 @@
+/* Effets de survol pour la page d'accueil */
+
+/* Cartes de fonctionnalités */
+.feature-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px) scale(1.15);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    z-index: 10;
+}
+
+/* Boutons */
+.btn {
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px) scale(1.15);
+    filter: brightness(1.1);
+    box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.3);
+}
+
+.btn-outline:hover {
+    transform: translateY(-2px) scale(1.15);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    background-color: #f9fafb;
+    border-color: #4f46e5;
+    color: #4f46e5;
+}
+
+/* Liens de navigation (Connexion / Inscription dans le header) */
+.nav-link {
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-link:hover {
+    color: #4f46e5;
+    transform: translateY(-1px);
+}
+
+/* Animation douce pour les icônes dans les boutons au survol */
+.btn:hover i {
+    transform: translateX(3px);
+    transition: transform 0.3s ease;
+}

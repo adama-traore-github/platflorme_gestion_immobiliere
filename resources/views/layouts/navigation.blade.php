@@ -15,6 +15,17 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    @if(Auth::user()->role === \App\Enums\UserRole::MANAGER)
+                        <x-nav-link :href="route('properties.index')" :active="request()->routeIs('properties.*')">
+                            {{ __('Biens Immobiliers') }}
+                        </x-nav-link>
+                        <x-nav-link :href="route('tenants.index')" :active="request()->routeIs('tenants.*')">
+                            {{ __('Locataires') }}
+                        </x-nav-link>
+                        <x-nav-link :href="route('leases.index')" :active="request()->routeIs('leases.*')">
+                            {{ __('Locations') }}
+                        </x-nav-link>
+                    @endif
                 </div>
             </div>
 
@@ -70,6 +81,17 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
+            @if(Auth::user()->role === \App\Enums\UserRole::MANAGER)
+                <x-responsive-nav-link :href="route('properties.index')" :active="request()->routeIs('properties.*')">
+                    {{ __('Biens Immobiliers') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('tenants.index')" :active="request()->routeIs('tenants.*')">
+                    {{ __('Locataires') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('leases.index')" :active="request()->routeIs('leases.*')">
+                    {{ __('Locations') }}
+                </x-responsive-nav-link>
+            @endif
         </div>
 
         <!-- Responsive Settings Options -->

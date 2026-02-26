@@ -3,11 +3,12 @@
 namespace App\Models;
 
 use App\Enums\UserRole;
+// use Illuminate\Contracts\Auth\MustVerifyEmail; // Désactivé en local
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class User extends Authenticatable
+class User extends Authenticatable // implements MustVerifyEmail (désactivé en local)
 {
     use HasFactory, Notifiable;
 
@@ -47,5 +48,10 @@ class User extends Authenticatable
     public function isPrestataire(): bool
     {
         return $this->role === UserRole::PRESTATAIRE;
+    }
+
+    public function properties()
+    {
+        return $this->hasMany(Property::class);
     }
 }
